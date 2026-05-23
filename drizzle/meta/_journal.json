@@ -29,6 +29,13 @@
       "when": 1779402711832,
       "tag": "0003_famous_shaman",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1779563278372,
+      "tag": "0004_hot_scorpion",
+      "breakpoints": true
     }
   ]
 }
