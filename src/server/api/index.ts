@@ -1,6 +1,7 @@
 import Elysia from "elysia";
 import { productsRouter } from "./routers/products";
 import { categoriesRouter } from "./routers/categories";
+import { treaty } from "@elysiajs/eden";
 
 export const app = new Elysia({
   prefix: "/api",
@@ -13,3 +14,7 @@ export const app = new Elysia({
   .get("/test", () => {
     return "test test 123";
   });
+
+export const api = treaty(app).api;
+
+export type App = typeof app;
