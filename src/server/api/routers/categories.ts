@@ -32,9 +32,11 @@ export const categoriesRouter = new Elysia({
   .post(
     "/",
     async ({ body }) => {
-      await db.insert(categories).values({
-        name: body.name,
-      });
+      throw new Error("Какая то ошибка");
+
+      // await db.insert(categories).values({
+      //   name: body.name,
+      // });
     },
     {
       body: CategorySchema,

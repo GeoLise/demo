@@ -4,5 +4,5 @@ export const CategorySchema = z.object({
   name: z
     .string({ message: "Введите имя" })
     .min(2, { message: "Имя должно содержать минимум 2 буквы" })
-    .max(100, { message: "Имя слишклм дшлинное" }),
+    .max(5, { message: "Имя слишклм дшлинное" }),
 });
