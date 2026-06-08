@@ -1,7 +1,7 @@
 import { and, eq } from "drizzle-orm";
 import Elysia from "elysia";
 import z from "zod/v4";
-import { CategorySchema } from "~/app/lib/schemas/category";
+import { CategorySchema } from "~/lib/schemas/category";
 import { db } from "~/server/db";
 import { categories, products } from "~/server/db/schema";
 
@@ -32,7 +32,7 @@ export const categoriesRouter = new Elysia({
   .post(
     "/",
     async ({ body }) => {
-      throw new Error("Какая то ошибка");
+      console.log(body);
 
       // await db.insert(categories).values({
       //   name: body.name,

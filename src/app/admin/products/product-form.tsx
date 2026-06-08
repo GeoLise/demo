@@ -3,9 +3,9 @@
 import { useForm } from "@tanstack/react-form";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import z from "zod/v4";
-import { api } from "~/app/lib/client/api";
-import { queryClient } from "~/app/lib/client/query-client";
-import { ProductSchema } from "~/app/lib/schemas/product";
+import { api } from "~/lib/client/api";
+import { queryClient } from "~/lib/client/query-client";
+import { ProductSchema } from "~/lib/schemas/product";
 
 export function ProductForm() {
   const createProductMutation = useMutation({

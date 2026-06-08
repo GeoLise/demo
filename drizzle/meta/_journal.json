@@ -36,6 +36,20 @@
       "when": 1779563278372,
       "tag": "0004_hot_scorpion",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1780942741019,
+      "tag": "0005_keen_gideon",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1780944121189,
+      "tag": "0006_misty_colossus",
+      "breakpoints": true
     }
   ]
 }

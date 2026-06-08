@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm";
 import Elysia from "elysia";
 import z from "zod/v4";
-import { ProductSchema } from "~/app/lib/schemas/product";
+import { ProductSchema } from "~/lib/schemas/product";
 import { db } from "~/server/db";
 import { products } from "~/server/db/schema";
 

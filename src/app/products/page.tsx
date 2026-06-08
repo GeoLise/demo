@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { api } from "../lib/client/api";
+import { api } from "../../lib/client/api";
 
 export default function Products() {
   const { data: products, isLoading } = useQuery({

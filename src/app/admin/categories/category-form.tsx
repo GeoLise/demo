@@ -3,8 +3,8 @@
 import { useForm } from "@tanstack/react-form";
 import { useMutation } from "@tanstack/react-query";
 import z from "zod/v4";
-import { api } from "~/app/lib/client/api";
-import { CategorySchema } from "~/app/lib/schemas/category";
+import { api } from "~/lib/client/api";
+import { CategorySchema } from "~/lib/schemas/category";
 
 export function CategoryForm() {
   const createCategoryMutation = useMutation({
