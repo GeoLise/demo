@@ -4,11 +4,14 @@ import z from "zod/v4";
 import { ProductSchema } from "~/lib/schemas/product";
 import { db } from "~/server/db";
 import { products } from "~/server/db/schema";
+import { userService } from "./user";
 
 export const productsRouter = new Elysia({
   prefix: "/products",
 })
-  .get("/", async () => {
+  .use(userService)
+  .get("/", async ({ session }) => {
+    console.log(session);
     const foundProducts = await db.query.products.findMany({
       where: eq(products.isDeleted, false),
     });
@@ -31,8 +34,9 @@ export const productsRouter = new Elysia({
   )
   .post(
     "/",
-    async ({ body }) => {
+    async ({ body, status }) => {
       console.log(body);
+
       await db.insert(products).values(body);
     },
     {
