@@ -3,6 +3,7 @@ import { productsRouter } from "./routers/products";
 import { categoriesRouter } from "./routers/categories";
 import { treaty } from "@elysiajs/eden";
 import { auth } from "../auth/auth";
+import { filesRouter } from "./routers/files";
 
 export const app = new Elysia({
   prefix: "/api",
@@ -13,6 +14,7 @@ export const app = new Elysia({
   })
   .use(productsRouter)
   .use(categoriesRouter)
+  .use(filesRouter)
   .get("/", () => {
     return "hello world!";
   })

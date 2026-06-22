@@ -23,6 +23,12 @@ export default async function Home() {
           height={20}
           priority
         />
+        <img
+          src={
+            "http://localhost:3000/api/files/019ef0a3-10af-7000-bb22-6cea23dd278d"
+          }
+          alt="a"
+        />
         <div className="flex flex-col gap-4 text-red-500 text-4xl">
           {products?.map((product) => (
             <p key={product.id} className="!text-red-500">

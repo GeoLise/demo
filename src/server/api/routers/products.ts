@@ -10,13 +10,18 @@ export const productsRouter = new Elysia({
   prefix: "/products",
 })
   .use(userService)
-  .get("/", async ({ session }) => {
-    console.log(session);
-    const foundProducts = await db.query.products.findMany({
-      where: eq(products.isDeleted, false),
-    });
-    return foundProducts;
-  })
+  .get(
+    "/",
+    async ({ session }) => {
+      const foundProducts = await db.query.products.findMany({
+        where: eq(products.isDeleted, false),
+      });
+      return foundProducts;
+    },
+    {
+      isSignedIn: true,
+    },
+  )
   .get(
     "/:id",
     async ({ params }) => {

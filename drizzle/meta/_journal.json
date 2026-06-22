@@ -50,6 +50,20 @@
       "when": 1780944121189,
       "tag": "0006_misty_colossus",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1782152652258,
+      "tag": "0007_hesitant_havok",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1782152680636,
+      "tag": "0008_square_red_ghost",
+      "breakpoints": true
     }
   ]
 }
