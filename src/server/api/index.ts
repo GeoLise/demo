@@ -8,6 +8,9 @@ import { filesRouter } from "./routers/files";
 export const app = new Elysia({
   prefix: "/api",
 })
+  .get("/ping", () => {
+    return "Hello";
+  })
   .mount(auth.handler)
   .onError((e) => {
     console.error(e);

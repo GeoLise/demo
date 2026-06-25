@@ -19,9 +19,7 @@ export const categoriesRouter = new Elysia({
     const cachedCategories = await redis.get("categories");
 
     if (cachedCategories) {
-      return {
-        categories: JSON.parse(cachedCategories) as C,
-      };
+      return JSON.parse(cachedCategories) as C;
     }
 
     const categoriesFromDb = await query.execute();
@@ -69,6 +67,7 @@ export const categoriesRouter = new Elysia({
     "/:id",
     async ({ body, params }) => {
       await db.update(categories).set(body).where(eq(categories.id, params.id));
+      await redis.del("categories");
     },
     {
       body: CategorySchema,
@@ -85,10 +84,12 @@ export const categoriesRouter = new Elysia({
       })
       .where(eq(categories.id, params.id));
 
-    await db
-      .update(products)
-      .set({
-        isDeleted: true,
-      })
-      .where(eq(products.categoryId, params.id));
+    await redis.del("categories");
+
+    // await db
+    //   .update(products)
+    //   .set({
+    //     isDeleted: true,
+    //   })
+    //   .where(eq(products.categoryId, params.id));
   });

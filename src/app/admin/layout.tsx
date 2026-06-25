@@ -1,6 +1,7 @@
 import { auth } from "~/server/auth/auth";
 import { headers as nextHeaders } from "next/headers";
 import { redirect } from "next/navigation";
+import { Sidebar } from "./sidebar";
 
 export default async function AdminLayout({
   children,
@@ -15,5 +16,10 @@ export default async function AdminLayout({
     redirect("/");
   }
 
-  return <div>{children}</div>;
+  return (
+    <div className="pl-40 p-10">
+      <Sidebar />
+      {children}
+    </div>
+  );
 }
