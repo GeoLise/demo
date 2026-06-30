@@ -3,6 +3,8 @@ import Image from "next/image";
 import { api } from "~/server/api";
 import { auth } from "~/server/auth/auth";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const products = (await api.products.get()).data;
 
